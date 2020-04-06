@@ -9,4 +9,8 @@
         <package name="com.zh.pojo"/>
     </typeAliases>
 
+    <mappers>
+        <mapper class="com.zh.dao.BookMapper"></mapper>
+    </mappers>
+
 </configuration>

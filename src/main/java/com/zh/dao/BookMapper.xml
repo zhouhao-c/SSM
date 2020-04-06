@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zh.dao.BookMapper">
+    <insert id="addBook" parameterType="Books">
+        insert into hao.t_books (book_name, book_count, detail)
+        values (#{book_name},#{book_count},#{detail});
+    </insert>
+
+    <delete id="deleteBookById" parameterType="int">
+        delete from hao.t_books where book_id = #{book_id}
+    </delete>
+
+    <update id="updateBook" parameterType="Books">
+        update hao.t_books set book_name=#{book_name},book_count=#{book_count},detail=#{detail}
+        where book_id=#{book_id};
+    </update>
+
+    <select id="queryBookById" resultType="Books" parameterType="int">
+        select * from hao.t_books
+        where book_id=#{book_id};
+    </select>
+
+    <select id="queryAllBook" resultType="Books">
+        select * from hao.t_books;
+    </select>
+</mapper>
